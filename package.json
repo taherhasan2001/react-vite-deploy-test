@@ -1,11 +1,20 @@
 {
+  "homepage": "https://taherhasan90.github.io/new-one",
   "name": "boat-website",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "overrides": {
+    "terser": "5.29.1",
+    "postcss": "8.4.35",
+    "semver": "7.6.0",
+    "nth-check": "2.1.1"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "start": "vite",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,11 +23,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "gh-pages": "^6.1.1",
-    "typescript": "^4.9.3",
     "vite": "^4.2.0",
     "vite-plugin-windicss": "^1.8.10",
     "windicss": "^3.5.6"
