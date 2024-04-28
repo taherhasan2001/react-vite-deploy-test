@@ -3,7 +3,6 @@
   "name": "boat-website",
   "private": false,
   "version": "0.0.0",
-  "type": "module",
   "overrides": {
     "terser": "5.29.1",
     "postcss": "8.4.35",
@@ -18,9 +17,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.14",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "framer-motion": "^10.11.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^3.1.0",

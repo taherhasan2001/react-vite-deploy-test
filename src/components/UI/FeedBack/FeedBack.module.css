@@ -1,0 +1,52 @@
+.feedBack{
+    font-size: 20px;
+}
+.contact {
+    text-align: center;
+}
+
+.userSelect {
+    user-select: none;
+
+}
+
+
+.centerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile {
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s, filter 0.3s;
+  }
+  
+  /* Scale up the profile image on hover */
+  .profile:hover {
+    transform: scale(1.015); /* Increase the size by 1.5% */
+    filter: brightness(1.2); /* Increase brightness on hover */
+    z-index: 1; /* Ensure it's above other elements on hover */
+  }
+  
+  /* Style for the profile image inside the link */
+  .profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-right: 10px;
+  }
+  
+
+
+
+
+  
+
+
+
+

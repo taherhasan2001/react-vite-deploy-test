@@ -1,0 +1,30 @@
+.meeting {
+    text-align:center;
+    position:absolute;
+    border-right:1px solid #555;
+    border-left:1px solid #555;
+    font-size:.85em;
+    border-bottom:1px solid black; 
+    height:24px;
+    background-color: #99ffcc;
+    margin-top: 0px;
+}
+
+.scheduleTable {
+    
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+.scheduleTable th, .scheduleTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.scheduleTable th {
+  background-color: #f2f2f2;
+}
+

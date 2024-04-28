@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0.75rem;
+    margin-bottom: 70px; 
+
+    
+}
+
+.btn {
+    text-align: center;
+    margin-left: 2rem;
+  
+  }
