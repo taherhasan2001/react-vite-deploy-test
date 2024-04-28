@@ -4,6 +4,6 @@ import WindiCSS from 'vite-plugin-windicss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:"/new-one/",
+  base:"/react-vite-deploy-test/",
   plugins: [react(), WindiCSS()],
 })
