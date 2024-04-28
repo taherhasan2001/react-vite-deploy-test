@@ -5,10 +5,10 @@ import CourseSearch from './components/UI/Input/CourseSearch';
 import classes from './MainProj.module.css';
 import FeedBack from './components/UI/FeedBack/FeedBack';
 import UserList from './Real/UserSelectCources/UserList';
-import Button from './components/UI/Button/Button';
 import generate_dec from './Real/Generate/GenerateDEC';
 import generateSchedule from './Real/Generate/GenerateSCH';
 import Pagination from './Real/Pagination/Pagination';
+import ButtonGen from './components/UI/Button/ButtonGEN';
 function MainProj(props) {
   const clear = ((refs)=>{
     const Alldays = ['S','N','M','T','W','R','F'];
@@ -96,12 +96,9 @@ function MainProj(props) {
 
               {stageLevel==0 && <UserList onClick={handleButtonClick} courses={selectedCourses} />}
 
-              <div className={classes.container}>
-                <Button type="submit" className={classes.btn} onClick={!stageLevel ? handleGenerateBTN : handleBackBTN }>
-                  {!stageLevel ? 'Generate' : 'back'}
-
-                </Button>
-              </div>
+              {!stageLevel && <div className={classes.container}>
+                <ButtonGen text="Generate" type="submit" className={classes.btn} onClick={handleGenerateBTN}/>
+              </div>}
             </Fragment>
           )}
           <Schedule onRefs={handleRefs}  />
@@ -109,8 +106,8 @@ function MainProj(props) {
           {stageLevel==1 && (
             <Fragment>
               <Controller
-                  name={{ first: "pre", second: "next" }}
-                  onClick={{ first: handlePrevBtn, second: handleNextBtn }}
+                  name={{ first: "back", second: "pre",third:'next' }}
+                  onClick={{ first: handleBackBTN , second: handlePrevBtn , third:handleNextBtn}}
                 />
             <Pagination >{`${pointer+1}/${Object.keys(dec).length}`}</Pagination>
 

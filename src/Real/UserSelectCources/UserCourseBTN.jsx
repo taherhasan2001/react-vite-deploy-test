@@ -3,6 +3,7 @@ import classes from './UserCourseBTN.module.css';
 
 const UserCourseBTN = (props) => {
   return (
+
     <button
       className={classes.button}
       type={props.type || 'button'}
@@ -13,5 +14,4 @@ const UserCourseBTN = (props) => {
     </button>
   );
 };
-
 export default UserCourseBTN;

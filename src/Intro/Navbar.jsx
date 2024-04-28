@@ -9,7 +9,7 @@ function Navbar(props) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: animationStart }}
+      transition={{ duration: 0.5, delay: props.flag? animationStart : 0 }} // animationStart 
     >
 <motion.div
   variants={reveal}
@@ -20,7 +20,7 @@ function Navbar(props) {
     type: 'tween',
     staggerChildren: 0.1,
     duration: 0.5,
-    delayChildren: animationStart + 0.5,
+    delayChildren:  props.flag? animationStart + 0.5 : 0, // animationStart + 0.5
   }}
   style={{ backgroundColor: '#008000' }}
   className="w-full flex items-center justify-around h-80px fixed top-0 z-100"
