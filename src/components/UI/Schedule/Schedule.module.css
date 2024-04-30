@@ -8,7 +8,7 @@
 
 .schedule {
     width: 100%;
-    max-width: 100rem;
+    max-width: 1500px;
     direction: ltr;
 }
 
@@ -18,14 +18,15 @@
     margin-top: 2px;
 }
 
-.schedule div.header {
+.schedule div.header { /* below table first row (header)*/
     height: 25px;
     font-weight: bold;
     background: #ababab;
+    
 }
 
 .schedule div.headerSlot {
-    height: 25px;
+    height: 24px;
     position: absolute;
     width: 7.7%;
     border-left: 1px solid black;
@@ -33,7 +34,7 @@
 
 .schedule div.day {
     text-align: center;
-    height: 25px;
+    height: 24px;
     font-weight: bold;
     position: absolute;
     left: 0px;
@@ -71,3 +72,30 @@
     width:7.7%;
     border-left:1px solid black;
 }
+
+@media screen and (max-width: 1100px) {
+        
+    .schedule div.day {font-size: 13px;} /* days in below table */
+  }
+@media screen and (max-width: 600px) { /* 400 - 600 */
+    .schedule div.day {
+        font-size: 10px;
+        font-weight: bold;
+        padding-top: 3px;
+
+
+    } /* days in below table */
+}
+
+
+@media screen and (max-width: 400px) {
+    .schedule div.day {
+        font-size: 8px;
+        padding-top: 5px;
+
+    } /* days in below table */
+    .schedule div.header{font-size: 10px;}
+
+}
+
+

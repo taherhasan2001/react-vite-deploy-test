@@ -2,9 +2,17 @@ import React,{useState,Fragment} from 'react';
 import Home from "./Intro/Home";
 import Navbar from "./Intro/Navbar";
 import MainProj from './MainProj';
+import classes from './App.module.css';
+
 function App() {
   const [nextStage, setNextStage] = useState(false);
   const [changed , setChanged] = useState(false);
+  const [letNavbar , setremoveNavbar] = useState(true);
+
+  // const handleNavbar = (flag) =>{
+  //   setremoveNavbar(flag);
+  // }
+
   const handleChangeStage = () => {
     if(!nextStage){
       setNextStage(true);
@@ -16,11 +24,16 @@ function App() {
   
   return (
     <Fragment>
-      <Navbar handleClick={handleChangeStage} flag={!changed} text={nextStage?"go back":"let's start"}/>
+      {letNavbar && <Navbar  handleClick={handleChangeStage} flag={!changed} text={nextStage?"go back":"let's start"}/>}
+
       {!nextStage && <Home flag={!changed} />}
-      {nextStage &&<div style={{ marginTop: '150px' }}>
-         <MainProj  />
-      </div>}
+      
+      {
+        nextStage &&  
+        <div className={classes.dev}>
+          <MainProj  setremoveNavbar={setremoveNavbar}/> 
+        </div>
+      } 
     </Fragment>
   );
 }

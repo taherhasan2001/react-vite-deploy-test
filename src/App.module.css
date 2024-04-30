@@ -1,0 +1,18 @@
+.dev {
+    margin-top: 110px;
+    padding-left: 20px ;
+    padding-right: 20px;
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+
+    .dev{
+        margin-top: 110px;
+        padding-left: 0px ;
+        padding-right: 0px;
+    
+    }
+}

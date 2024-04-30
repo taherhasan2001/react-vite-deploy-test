@@ -10,6 +10,9 @@ import generateSchedule from './Real/Generate/GenerateSCH';
 import Pagination from './Real/Pagination/Pagination';
 import ButtonGen from './components/UI/Button/ButtonGEN';
 function MainProj(props) {
+
+
+
   const clear = ((refs)=>{
     const Alldays = ['S','N','M','T','W','R','F'];
     for (const day of Alldays) {
@@ -57,6 +60,7 @@ function MainProj(props) {
   };
 
   const handleGenerateBTN = () => {
+    props.setremoveNavbar(false);
     setPointer(0);
     if (selectedCourses.length > 0){
       const updatedDec = {  }; 
@@ -69,6 +73,7 @@ function MainProj(props) {
     
   };
   const handleBackBTN = () => {
+    props.setremoveNavbar(true);
     const updatedDec = {}; // Create a copy of the dec state
     generate_dec(updatedDec, selectedCourses); // Call generate_dec with the updated dec
     setDec(updatedDec); // Update the dec state with the new values
@@ -96,7 +101,7 @@ function MainProj(props) {
 
               {stageLevel==0 && <UserList onClick={handleButtonClick} courses={selectedCourses} />}
 
-              {!stageLevel && <div className={classes.container}>
+              {!stageLevel &&selectedCourses.length!=0 && <div className={classes.container}>
                 <ButtonGen text="Generate" type="submit" className={classes.btn} onClick={handleGenerateBTN}/>
               </div>}
             </Fragment>

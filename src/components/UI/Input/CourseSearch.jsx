@@ -56,7 +56,7 @@ const CourseSearch = (props) => {
             onChange={handleInputChange}
             value={inputValue}
 
-            renderInput={(params) => <TextField {...params} label="Course label" />}
+            renderInput={(params) => <TextField {...params} label="Select Courses " />}
         />
         );
 }

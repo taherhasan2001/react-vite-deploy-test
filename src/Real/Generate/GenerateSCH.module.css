@@ -3,19 +3,27 @@
     position:absolute;
     border-right:1px solid #555;
     border-left:1px solid #555;
-    font-size:.85em;
+    /* font-size:.85em; */
+    font-size:clamp(5px, 1.5vw, 16px);
     border-bottom:1px solid black; 
     height:24px;
     background-color: #99ffcc;
     margin-top: 0px;
+
+
 }
 
 .scheduleTable {
     
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: -100px;
     margin-bottom: 50px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+
+    
   }
   
 .scheduleTable th, .scheduleTable td {
@@ -28,3 +36,38 @@
   background-color: #f2f2f2;
 }
 
+
+
+
+@media screen and (max-width: 600px) { /* 400 - 600 */
+  .scheduleTable td  {
+    font-size: 12px;
+    font-weight: bold;
+
+  } /* table up */
+  .scheduleTable th {
+    font-size: 15px;
+    font-weight: normal;
+
+  } /* table up */
+  .meeting {
+    font-size:7px;
+    font-weight: bold;
+    padding-top:6px;
+
+
+  }
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .scheduleTable td {font-size: 8px;}/* table up */
+  .scheduleTable th {font-size: 8px;}/* table up */
+  .meeting {
+    font-size:5.5px;
+    font-weight: bold;
+
+  }
+
+}
