@@ -43,7 +43,7 @@ const Testimonials = () => {
     <div className={classes.testimonials}>
       <div className={classes.inner}>
         <h1>Testimonials</h1>
-        <div className={classes.border}></div>
+        {/* <div className={classes.border}></div> */}
         <div className={classes.row}>
           <Testimonial
             image={p1}

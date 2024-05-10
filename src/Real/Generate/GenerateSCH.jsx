@@ -11,6 +11,10 @@ const clear = ((refs)=>{
   
     }
   }
+
+  if(refs['table'])
+    refs['table'].current.innerHTML = '';
+
 });
 
 const Table = ((chosen_sections,containerRef)=>{
@@ -53,6 +57,7 @@ const Table = ((chosen_sections,containerRef)=>{
 
 
 function generateSchedule(decIn, pointer, refs) {
+
   clear(refs);
   const isEmpty = Object.keys(decIn).length === 0;
   if (!isEmpty) {

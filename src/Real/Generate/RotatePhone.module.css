@@ -1,0 +1,64 @@
+/* html, body {
+    background: black;
+    height: 100%;
+    width: 100%;
+  } */
+  
+  /* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  } */
+  .container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 120px;
+    margin-bottom: 30px;
+  }
+  
+  .phone {
+    height: 50px;
+    width: 100px;
+    border: 3px solid black;
+    border-radius: 10px;
+    animation: rotate 1.5s ease-in-out infinite alternate;
+
+    /* display: none; */
+  }
+  
+  .message {
+
+    color: black;
+    font-size: 1em;
+    margin-top: 40px;
+
+    /* display: none; */
+  }
+  
+  @keyframes rotate {
+    0% {
+          transform: rotate(0deg)
+      }
+      50% {
+          transform: rotate(-90deg)
+      }
+      100% {
+          transform: rotate(-90deg)
+      }
+  }
+    .phone, .message {
+      display: none;
+    }
+
+
+  @media screen and (max-width: 600px) {
+    .phone, .message {
+      display: block;
+    }
+  
+  }

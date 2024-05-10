@@ -3,5 +3,6 @@
     flex-direction: row; /* Stack elements horizontally */
     align-items: center; /* Align items vertically to the center */
     justify-content: center; /* Center items horizontally */
-    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
 }

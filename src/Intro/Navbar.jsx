@@ -3,7 +3,6 @@ import Logo from './Logo';
 import ArrowRight from './ArrowRight';
 import { motion } from 'framer-motion';
 import { animationStart, reveal } from '../utils/animation';
-
 function Navbar(props) {
   return (
     <motion.div
@@ -34,7 +33,7 @@ function Navbar(props) {
           className="flex gap-5px items-center cursor-pointer"
         >
 <span className="mb-3px text-white" onClick={props.handleClick}>{props.text}</span>
-          <ArrowRight />
+          <ArrowRight onClick={props.handleClick}/>
         </motion.div>
       </motion.div>
     </motion.div>

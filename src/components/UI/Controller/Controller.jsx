@@ -15,9 +15,7 @@ const Controller = (props) => {
         {props.name.second}
       </Button>
 
-      <Button type="submit" className={classes.btn} onClick={third}>
-        {props.name.third}
-      </Button>
+
     </div>
   );
 };

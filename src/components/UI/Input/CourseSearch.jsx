@@ -16,6 +16,9 @@ const CourseSearch = (props) => {
         };
 
         fetchCourses();
+
+
+
     }, []);
 
 
@@ -35,24 +38,38 @@ const CourseSearch = (props) => {
             const [foundNewCourses, foundNewSubCourses] = await SearchForCourse(newInputValue);
             setFoundCourses(foundNewCourses);
             setFoundSubCourses(foundNewSubCourses);
-
+    
             const indexToRemove = AllCourcesNames.indexOf(newInputValue);
             if (indexToRemove !== -1) {
                 const updatedCourcesNames = [...AllCourcesNames];
                 updatedCourcesNames.splice(indexToRemove, 1);
                 setAllCourcesNames(updatedCourcesNames);
             }
-            // console.log(newInputValue);
+    
+            // Update removedCources array
+    
             setInputValue(inputValue === null ? '' : null);
-
         }
     };
+
+
+    const removedCourses =[]
+    props.selectedCourses.forEach(element => {
+        removedCourses.push(element[0].course_label)
+        
+    });
+
+
+    const filteredArray = AllCourcesNames.filter(course => !removedCourses.includes(course));
+    
+
+    
     return (
         <Autocomplete
             className={props.className}
             disablePortal
             id="combo-box"
-            options={AllCourcesNames} 
+            options={filteredArray} 
             onChange={handleInputChange}
             value={inputValue}
 

@@ -34,7 +34,6 @@ const Schedule = forwardRef((props, ref) => {
     <div className={classes.container} ref={ref}>
       <div className={classes.schedule}>
         <div className={`${classes.row} ${classes.header}`}>
-          {/* Header slots */}
           <div >
                     <div className={classes.headerSlot} style={{left:'0px', textAlign:'center', userSelect: 'none'}}>Day</div>
                     <div className={classes.headerSlot} style={{left:'7.7%', textAlign:'left', userSelect: 'none'}}>7</div>

@@ -1,4 +1,12 @@
+import { each } from "jquery";
+
+let minTime = null;
+let minStartTime = null;
+let minEndTime = null;
+let minDays = null;
+
 function reduceDays(usedDec) {
+    getDetails(usedDec);
     const newDec = {};
     for (const key in usedDec) {
       if (usedDec[key]['numberOfDays'].length === minDays) {
@@ -65,6 +73,7 @@ function reduceSaturday(usedDec){
     return newDec;
 }
 function reduceTime(usedDec) {
+  getDetails(usedDec);
     const newDec = {};
     for (const key in usedDec) {
       if (usedDec[key]['totalTime'] === minTime) {
@@ -87,6 +96,8 @@ function FRemoveFullSections(usedDec) {
     return newDec;
 }
 function reduceEndTime(usedDec) {
+  getDetails(usedDec);
+
     const newDec = {};
     for (const key in usedDec) {
       if (usedDec[key]['endTime'] === minEndTime) {
@@ -122,12 +133,16 @@ function remove_end_time(usedDec){
 function RemoveDrsFunction(usedDec, keysToDelete){
     const newDec = {};
     for (const key in usedDec) {
-      if (!keysToDelete.includes(key)) {
-        if (!(key in newDec)) {
-          newDec[key] = usedDec[key];
+      let flag = true;
+      usedDec[key].instructors.forEach(element => {
+        if (keysToDelete.includes(element)) {
+          flag=false;
         }
-      }
+      });
+      if(flag)
+        newDec[key] = usedDec[key];
     }
+
     return newDec;
 }
 function choices(decIN) {
