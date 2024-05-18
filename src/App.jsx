@@ -4,11 +4,11 @@ import Navbar from "./Intro/Navbar";
 import MainProj from './MainProj';
 import classes from './App.module.css';
 import TextAnimation from './Real/MovieStart/TextAnimation';
-
+import ErrorModal from './teachUser/ErrorModule';
 function App() {
   const [stageLevel, setStageLevel] = useState(-1);
   const [changed , setChanged] = useState(false);
-
+  const [error , setError] = useState(true);
   useEffect(() => {
     // Check if flag exists in localStorage
     const flag = localStorage.getItem('skip');
@@ -50,16 +50,23 @@ function App() {
     }
   };
 
-
+  const errorHandler = () =>{
+    setError(false)
+  }
   
-
 
   return (
     <Fragment >
+      
+    {stageLevel>0  && error && <ErrorModal
+                title={' نظرة سريعة '}
+                message={'بإمكانك في هذه الصفحة إضافة المواد التي تريدها ... أضف كل المواد ثم اضغط على الزر لتوليد الجداول ... تذكر اختيار كل المواد ثم الزر'}
+                onConfirm={errorHandler}
+      />}
 
   {stageLevel==-1 && <TextAnimation changeBackGNDtoWhite={changed} handleChangeStage={handleChangeStage}/>}
 
-      { stageLevel!=-1 && <Navbar  handleClick={handleChangeStage} flag={!changed} text={stageLevel?"go back":"let's start"}/>} 
+      { stageLevel!=-1 && <Navbar error={stageLevel>0  && error} handleClick={handleChangeStage} flag={!changed} text={stageLevel?"go back":"let's start"}/>} 
 
       {stageLevel==0 && <Home flag={!changed} />}
 

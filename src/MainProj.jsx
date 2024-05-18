@@ -15,7 +15,6 @@ import * as settingsFunc from './Real/settings';
 import MainComponantDrDetails  from './Real/Dr/MainComponantDrDetails';
 import GetDetails from './Real/Dr/GetDetails';
 
-
 function MainProj(props) {
   const clear = ((refs)=>{
     const Alldays = ['S','N','M','T','W','R','F'];
@@ -159,12 +158,10 @@ function MainProj(props) {
   
   }, [selectedCourses]);
 
-
-
-
   
   return (
     <Fragment>
+
           {props.stageLevel == 2 && <RotatePhone/>}
           {props.stageLevel == 2 && <MainComponantDrDetails selectedOptionsString={selectedOptionsString} setSelectedOptionsString={setSelectedOptionsString} details={details} ArrayOfCourcesNames={ArrayOfCourcesNames}/>}
                  

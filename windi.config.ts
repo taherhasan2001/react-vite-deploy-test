@@ -5,6 +5,7 @@ export default defineConfig({
     extend: {
       animation: {
         "clip-from-top-animation": "clip 1s ease-in-out 5.5s forwards",
+        "clip-from-top-no-animation": "clip 0s ease-in-out 0s forwards",
       },
       keyframes: {
         "clip": {

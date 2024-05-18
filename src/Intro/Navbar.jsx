@@ -3,6 +3,7 @@ import Logo from './Logo';
 import ArrowRight from './ArrowRight';
 import { motion } from 'framer-motion';
 import { animationStart, reveal } from '../utils/animation';
+import classes from './Navbar.module.css'
 function Navbar(props) {
   return (
     <motion.div
@@ -21,7 +22,7 @@ function Navbar(props) {
     duration: 0.5,
     delayChildren:  props.flag? animationStart + 0.5 : 0, // animationStart + 0.5
   }}
-  style={{ backgroundColor: '#008000' }}
+  style={{ backgroundColor: props.error?'#012F01':'#008000' }}
   className="w-full flex items-center justify-around h-80px fixed top-0 z-100"
 >
         <motion.div variants={reveal}>
@@ -32,7 +33,7 @@ function Navbar(props) {
           variants={reveal}
           className="flex gap-5px items-center cursor-pointer"
         >
-<span className="mb-3px text-white" onClick={props.handleClick}>{props.text}</span>
+    <span   className={`mb-3px text-white ${classes['poetsen-one-regular']}`} onClick={props.handleClick}>{props.text}</span>
           <ArrowRight onClick={props.handleClick}/>
         </motion.div>
       </motion.div>
