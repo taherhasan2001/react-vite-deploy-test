@@ -37,7 +37,7 @@ const MainComponantDrDetails = (props) => {
     return (
         <div className={classes.container}>
             <fieldset>
-                <legend>Feel free to remove any doctors as you see fit.</legend>
+                <legend>Remove the Dr.</legend>
             </fieldset>
 
             <SelectCourse

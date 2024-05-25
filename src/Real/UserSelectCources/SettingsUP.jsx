@@ -1,4 +1,4 @@
-import  { React,Fragment,useRef,useEffect } from 'react';
+import  { React,useRef } from 'react';
 import classes from './SettingsUP.module.css';
 
 const Settings = (props) => {

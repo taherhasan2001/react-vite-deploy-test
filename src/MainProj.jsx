@@ -14,6 +14,7 @@ import Settings from './Real/UserSelectCources/SettingsUP';
 import * as settingsFunc from './Real/settings';
 import MainComponantDrDetails  from './Real/Dr/MainComponantDrDetails';
 import GetDetails from './Real/Dr/GetDetails';
+import ErrorModal from './teachUser/ErrorModule';
 
 function MainProj(props) {
   const clear = ((refs)=>{
@@ -161,7 +162,11 @@ function MainProj(props) {
   
   return (
     <Fragment>
-
+      {props.stageLevel==2  && props.error && <ErrorModal
+                title={' نظرة سريعة '}
+                message={'يوجد ثلاثة اعادات: الأولى حذف الدكتور الثانية حذف اليوم الثالثة اعدادات متقدمة'}
+                onConfirm={props.errorChildHandler}
+      />}
           {props.stageLevel == 2 && <RotatePhone/>}
           {props.stageLevel == 2 && <MainComponantDrDetails selectedOptionsString={selectedOptionsString} setSelectedOptionsString={setSelectedOptionsString} details={details} ArrayOfCourcesNames={ArrayOfCourcesNames}/>}
                  

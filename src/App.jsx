@@ -9,6 +9,8 @@ function App() {
   const [stageLevel, setStageLevel] = useState(-1);
   const [changed , setChanged] = useState(false);
   const [error , setError] = useState(true);
+  const [errorChild , setErrorChild] = useState(true);
+
   useEffect(() => {
     // Check if flag exists in localStorage
     const flag = localStorage.getItem('skip');
@@ -51,9 +53,13 @@ function App() {
   };
 
   const errorHandler = () =>{
-    setError(false)
+    setError(false);
   }
-  
+  const errorChildHandler = () =>{
+    setErrorChild(false);
+  }
+
+
 
   return (
     <Fragment >
@@ -66,14 +72,14 @@ function App() {
 
   {stageLevel==-1 && <TextAnimation changeBackGNDtoWhite={changed} handleChangeStage={handleChangeStage}/>}
 
-      { stageLevel!=-1 && <Navbar error={stageLevel>0  && error} handleClick={handleChangeStage} flag={!changed} text={stageLevel?"go back":"let's start"}/>} 
+      { stageLevel!=-1 && <Navbar error={ (stageLevel==1  && error) || (stageLevel==2 && errorChild)} handleClick={handleChangeStage} flag={!changed} text={stageLevel?"go back":"let's start"}/>} 
 
       {stageLevel==0 && <Home flag={!changed} />}
 
       {
         stageLevel>0 &&  
         <div className={classes.dev }>
-          <MainProj   stageLevel={stageLevel}  setStageLevel={setStageLevel}/> 
+          <MainProj error={errorChild} errorChildHandler={errorChildHandler}  stageLevel={stageLevel}  setStageLevel={setStageLevel}/> 
         </div>
       } 
     </Fragment>
